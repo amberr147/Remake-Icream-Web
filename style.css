@@ -1,11 +1,12 @@
 /* CĂN FULL TRANG */
-*{
+body {
+  background-color: hsl(33, 100%, 88%);
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-.main-body{
+.main-body {
   background-color: hsl(33, 100%, 88%);
   margin: 0px;
   border: 0px;
@@ -14,26 +15,37 @@
 
 
 /* HEADER */
-.main-head-height{
+.main-header-height {
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+}
+
+.main-header {
   background-color: hsl(30, 100%, 50%);
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
-
-.hold-banner{
+.hold-banner {
+  position: absolute;
   font-size: 20px;
   text-align: center;
-  animation: slideLeft 7s linear infinite;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  animation: slideLeft 20s linear infinite;
 }
 
-@keyframes slideLeft{
-  0%{
-    transform: translateX(-100%);
+@keyframes slideLeft {
+  0% {
+    left: 100%;
   }
-  100%{
-    transform: translateX(100%);
+
+  100% {
+    left: -50%;
   }
 }
 
@@ -47,7 +59,8 @@
 /* Định dạng container cho slideshow */
 .welcome-pic {
   width: 100%;
-  aspect-ratio: 19/6; /* Định dạng ảnh cố định */
+  aspect-ratio: 19/6;
+  /* Định dạng ảnh cố định */
   position: relative;
   top: 290px;
   overflow: hidden;
@@ -72,12 +85,12 @@
 }
 
 /* Hiển thị ảnh đầu tiên khi radio đầu tiên được chọn */
-.welcome-pic input#slideshow_1:checked ~ .pictures img:nth-of-type(1) {
+.welcome-pic input#slideshow_1:checked~.pictures img:nth-of-type(1) {
   opacity: 1;
 }
 
 /* Hiển thị ảnh thứ hai khi radio thứ hai được chọn */
-.welcome-pic input#slideshow_2:checked ~ .pictures img:nth-of-type(2) {
+.welcome-pic input#slideshow_2:checked~.pictures img:nth-of-type(2) {
   opacity: 1;
 }
 
@@ -101,7 +114,7 @@
 }
 
 /* Đổi màu dấu chấm khi ảnh tương ứng được chọn */
-.welcome-pic input#slideshow_1:checked ~ .dots label[for="slideshow_1"],
-.welcome-pic input#slideshow_2:checked ~ .dots label[for="slideshow_2"] {
+.welcome-pic input#slideshow_1:checked~.dots label[for="slideshow_1"],
+.welcome-pic input#slideshow_2:checked~.dots label[for="slideshow_2"] {
   background: hsl(47, 100%, 48%);
 }
