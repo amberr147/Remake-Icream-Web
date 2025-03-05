@@ -1,4 +1,4 @@
-/* CĂN FULL TRANG */
+/* --------- CĂN FULL TRANG ---------------*/
 body {
   background-color: hsl(35, 80%, 92%);
   margin: 0;
@@ -13,7 +13,7 @@ body {
 }
 
 
-/* HEADER */
+/*------- HEADER ----------*/
 .main-head-height {
   display: flex;
   position: relative;
@@ -47,7 +47,7 @@ body {
 }
 
 
-/* NAVIGATION-BAR & LOGO*/
+/*------------- NAVIGATION-BAR & LOGO -------------*/
 .navigation-bar {
   position: relative;
   z-index: 9999;
@@ -214,7 +214,7 @@ body {
   cursor: pointer;
 }
 
-/* CHECKBOX & CHECKBTN (hamburger)*/
+/*---------CHECKBOX & CHECKBTN ----------*/
 #check {
   display: none;
   /* Ẩn checkbox */
@@ -384,7 +384,7 @@ body {
 
 
 
-/* WELCOME PIC  */
+/*----------- WELCOME PIC -----------*/
 .welcome-pic input[type="radio"] {
   display: none;
 }
@@ -405,8 +405,7 @@ body {
 
 .pictures .pic {
   position: absolute;
-  top: -20px;
-  /* Dời ảnh lên 20px */
+  top: -20px;  /* Dời ảnh lên 20px */
   left: 0;
   width: 100%;
   height: 100%;
@@ -444,7 +443,7 @@ body {
   background: hsl(47, 100%, 48%);
 }
 
-/* Under welcome pic*/
+/*---------- UNDER WEL PIC -----------*/
 .under-welpic {
   display: flex; 
   flex-direction: column; /* Xếp chồng các phần tử theo chiều dọc */
@@ -484,7 +483,11 @@ body {
   align-items: center;
 }
 
-/* Best seller */
+.buy-button a i{
+  margin-left: 15px;
+}
+
+/*--------- BEST SELLERS ---------- */
 .best-seller {
   display: flex;
   flex-direction: column;
@@ -572,9 +575,133 @@ body {
   font-weight: bold;
 }
 
+ /*-------------- MAQUEE ----------------*/
+ /* Vùng chứa marquee */
+.home-maquee {
+  height: 70px;
+  width: 100vw;
+  padding: 5px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Vùng chứa nội dung chạy */
+.maquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Nội dung chạy, nhân đôi để tạo hiệu ứng cuộn mượt */
+.maquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+/* Chữ cuộn */
+.maquee-content span {
+  font-size: 60px;
+  font-weight: bold;
+  color: hsl(11, 86%, 65%);
+  padding-right: 50px; /* Khoảng cách giữa các cụm chữ */
+  margin: 0 20px 0 0;
+}
+
+/* Hiệu ứng chạy chữ */
+@keyframes marquee {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+/*------------ HOME BANNER WRAP ------------*/
+.home-center-banner-wrap {
+  display: flex; 
+  flex-direction: row; /* Xếp chồng các phần tử theo chiều dọc */
+  align-items: center; /* Căn giữa nội dung theo chiều ngang */
+  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+  text-align: center; /* Căn giữa chữ bên trong */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.home-column {
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Bọc phần mô tả và nút để căn cùng hàng */
+
+.text-button-container-left {
+  background-color: hsl(1, 66%, 41%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0px; /* Khoảng cách với ảnh */
+}
+
+.text-button-container-right {
+  background-color: hsl(342, 57%, 25%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0px; /* Khoảng cách với ảnh */
+}
+
+.left-side-description h2{
+  font-family: Montserrat, Roboto, sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  display: flex;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.left-side-description,
+.left-side-button,
+.right-side-button {
+  flex: 1; /* Để chúng chia đều khoảng không */
+  text-align: right; /* Căn chữ về bên trái */
+  margin-right: 40px;
+}
+
+.left-side-button a,
+.right-side-button a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: hsl(350, 82%, 66%); /* Màu nền nút */
+  color: white;
+  text-decoration: none;
+  font-family: Montserrat, Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500 ;
+  border-radius: 40px;
+  transition: 0.3s;
+}
+
+.left-side-button a i,
+.right-side-button a i{
+  margin-left: 15px;
+}
+
+.left-side-button a:hover,
+.right-side-button a:hover {
+  background: #d64b32;
+}
 
 
-/* FONTS */
+
+
+/*-------- FONTS ----------*/
 @font-face {
   src: url(/fonts/Montserrat-VariableFont_wght.ttf);
   font-family: Montserrat;
