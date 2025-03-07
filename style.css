@@ -628,7 +628,7 @@ body {
   justify-content: center; /* Căn giữa nội dung theo chiều dọc */
   text-align: center; /* Căn giữa chữ bên trong */
   box-sizing: border-box;
-  padding: 10px;
+  padding: 0px;
 }
 
 .home-column {
@@ -659,8 +659,9 @@ body {
 
 .left-side-description h2{
   font-family: Montserrat, Roboto, sans-serif;
-  font-size: 36px;
-  font-weight: 600;
+  color: hsl(35, 80%, 92%);
+  font-size: 31px;
+  font-weight: 550;
   display: flex;
   text-align: left;
   margin-left: 20px;
@@ -697,6 +698,376 @@ body {
 .right-side-button a:hover {
   background: #d64b32;
 }
+
+/*------------- STAGE ------------*/
+/* Ẩn radio */
+.slider-nojs input[type="radio"] {
+  display: none;
+}
+
+/* Container cha */
+.container-fluid {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* Section title và nút View All */
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+.section-title-h2 {
+  font-family: Montserrat, Roboto, sans-serif;
+  font-size: 40px;
+  color: hsl(11, 86%, 65%);
+  margin-left: 15px;
+  margin-top: 0px;
+}
+
+/* Nút View All */
+.btn_cus {
+  background: hsl(350, 82%, 66%);
+  color: #fff;
+  font-family: Montserrat, Roboto, sans-serif;
+  padding: 10px 15px;
+  margin-right: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 15px;
+}
+.btn_cus i {
+  margin-left: 5px;
+}
+
+/* Slider chính */
+.slider-nojs {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Slides container */
+.slides {
+  display: flex;
+  box-sizing: border-box;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Mỗi slide rộng 100% container */
+.slide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 35px;
+}
+
+/* Mỗi sản phẩm con */
+.cate-item {
+  position: relative;
+  width: calc(25% - 10px); /* Tránh tràn layout */
+  min-width: 150px;
+  text-align: center;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0 5px;
+}
+
+.cate-item img {
+  width: 100%;
+  display: block;
+}
+
+.cate-item a{
+  text-decoration: none;
+  text-align: center;
+}
+
+.recipe-link__text {
+  display: flex;
+  flex-direction: column; /* Xếp nội dung theo chiều dọc */
+  align-items: center; /* Căn giữa ngang */
+  justify-content: center; /* Căn giữa dọc */
+  text-align: center; /* Căn giữa text */
+  height: 100px; /* Tăng chiều cao phần nền chữ */
+}
+
+.recipe-link__text h2 {
+  margin: 0;  /*QUAN TRỌNG LÀ TẮT MARGIN CỦA THẰNG H2*/
+}
+
+.recipe-link__text .subtitle {
+  font-size: 14px;
+  margin-top: 5px; /* Điều chỉnh khoảng cách giữa tiêu đề và chữ nhỏ */
+}
+
+
+/* Hiệu ứng trượt ngang bằng radio */
+#slide1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+  transform: translateX(-33.1%);
+}
+#slide3:checked ~ .slides {
+  transform: translateX(-66.3%);
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dots label {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#slide1:checked ~ .dots label[for="slide1"],
+#slide2:checked ~ .dots label[for="slide2"],
+#slide3:checked ~ .dots label[for="slide3"] {
+  background: hsl(342, 57%, 25%); /* dot active */
+}
+
+/* Responsive tối ưu hơn */
+@media (max-width: 768px) {
+  .slides {
+    width: 200%; /* Giảm số slide cho màn hình nhỏ */
+  }
+  .cate-item {
+    width: 45%;
+  }
+}
+@media (max-width: 480px) {
+  .slides {
+    width: 100%;
+  }
+  .cate-item {
+    width: 90%;
+  }
+}
+
+/*--------- HOME INSTA ---------*/
+#home-ins {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  padding: 70px;
+}
+
+.home-ins-container {
+  width: 100%;
+  text-align: center;
+}
+
+.title-ins h2{
+  font-family: Montserrat, Roboto, sans-serif;
+  font-size: 40px;
+  color: hsl(11, 86%, 65%);
+  margin-bottom: 5px;
+}
+
+.pic-home-ins {
+  display: flex;
+  flex-wrap: wrap; /* Đảm bảo hình ảnh xuống dòng khi màn hình nhỏ */
+  justify-content: center; /* Căn giữa các hình */
+  gap: 5px; /* Khoảng cách giữa các hình */
+  margin-top: 0px;
+}
+
+.ins-pic {
+  flex: 1;
+  max-width: calc(25% - 15px); /* Chia đều 4 hình trên một hàng, trừ đi khoảng cách */
+  text-align: center;
+}
+
+.ins-pic img {
+  width: 100% !important;
+  height: 100%; 
+  aspect-ratio: 1 / 1; /* Đảm bảo ảnh luôn là hình vuông */
+  object-fit: cover; /*Giữ tỉ lệ ảnh và cắt phần dư */
+}
+
+
+/*--------- FOOTER ---------*/
+/* Vùng chứa tổng thể */
+.footer-hero {
+  background-color: #fdf8f5;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: Montserrat, Roboto, sans-serif;
+}
+
+/* Container chính canh giữa màn hình */
+.footer-hero-container {
+  max-width: 100vw;
+  display: flex;
+  flex-wrap: nowrap; 
+  
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Cột bên trái */
+.footer-left {
+  margin-bottom: 20px;
+  padding: 60px;
+}
+
+/* Ảnh logo */
+.footer-illustration img {
+  display: block;
+  margin-bottom: 20px;
+  width: 162px;
+  height: 171px;
+}
+
+/* Tiêu đề lớn */
+.footer-left h2 {
+  font-size: 50px;
+  margin: 0 0 20px;
+  color: #333;
+}
+
+/* Mô tả, lời nhắn đăng ký */
+.footer-left p {
+  font-family: Montserrat, Roboto, sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Ô nhập email + nút gửi */
+.email-subscribe {
+  display: flex;
+  align-items: center;
+  max-width: 400px; /* giới hạn chiều rộng ô nhập */
+}
+
+.email-subscribe input {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.email-subscribe button {
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #f3755a;
+  color: #fff;
+  border: 1px solid #f3755a;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.email-subscribe button:hover {
+  background-color: #333; /* hiệu ứng hover */
+}
+
+/* Cột bên phải */
+.footer-right {
+  margin-left: auto; 
+  text-align: left;
+  margin-right: 50px; 
+  margin-top: 30px;
+  padding: 60px 40px;
+}
+
+.footer-right h3 {
+  font-family: Montserrat, Roboto, sans-serif;
+  font-size: 18px;
+  margin: 0 0 15px;
+  color: hsl(11, 86%, 65%);
+}
+
+.footer-right p {
+  font-family: Montserrat, Roboto, sans-serif;
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: hsl(11, 86%, 65%);
+}
+
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .footer-hero-container {
+    flex-direction: column;
+    align-items: center; /* tất cả dồn xuống giữa */
+  }
+  .footer-left, .footer-right {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+    text-align: center; /* căn giữa cho mobile */
+  }
+}
+
+
+
+/*------- SOCIAL ICON -----*/
+.social-icons {
+  position: fixed;        /* Cố định so với viewport */
+  top: 70%;               /* Giữa màn hình theo chiều dọc */
+  right: 20px;            /* Cách mép phải 20px */
+  transform: translateY(-50%); /* Giúp icon nằm đúng giữa */
+  display: flex;
+  flex-direction: column; /* Xếp icon theo chiều dọc */
+  gap: 10px;              
+  z-index: 999;           
+}
+
+/* Mỗi link icon */
+.social-icons a {
+  display: block;
+  width: 40px;     
+  height: 40px;    
+  border-radius: 50%;       
+  background-color: #fff;    
+  overflow: hidden;          /* Để icon không tràn viền */
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Đổ bóng nhẹ */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hiệu ứng hover: phóng to nhẹ */
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+/* Icon ảnh bên trong */
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  margin: 8px; /* Căn giữa ảnh trong khung 40x40 */
+}
+
+
 
 
 
