@@ -93,7 +93,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 46px;
+  height: 50px;
   width: 782px;
   position: fixed;
   right: 35px;
@@ -109,7 +109,7 @@ body {
 
   width: 60%;
   max-width: 800px;
-  height: 40px;
+  height: 45px;
 
   display: flex;
   align-items: center;
@@ -151,6 +151,7 @@ body {
   color: white;
   font-family: Montserrat, Roboto;
   font-size: 14px;
+  font-weight: 530;
   padding: 11px 15px;
   white-space: nowrap;
 }
@@ -675,6 +676,12 @@ body {
   margin-right: 40px;
 }
 
+.img-hover-div img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
 .left-side-button a,
 .right-side-button a {
   display: inline-block;
@@ -1048,7 +1055,8 @@ body {
   border-radius: 50%;       
   background-color: #fff;    
   overflow: hidden;          /* Để icon không tràn viền */
-  text-align: center;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Đổ bóng nhẹ */
   transition: transform 0.2s ease-in-out;
@@ -1058,14 +1066,27 @@ body {
 .social-icons a:hover {
   transform: scale(1.1);
 }
+.mail-background{
+  background-color: hsl(11, 82%, 62%);
+  width: 35px;
+  height: 35px;
+}
 
 /* Icon ảnh bên trong */
 .social-icons a img {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   object-fit: cover;
-  margin: 8px; /* Căn giữa ảnh trong khung 40x40 */
 }
+
+.social-icons a{
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
 
 
 
